@@ -1,0 +1,64 @@
+.input-box input{
+    padding: 7.5px 15px;
+    width: 50%;
+    border: 1px solid #cccccc;
+    margin-bottom: 20px;
+}
+.btn-box button{
+    padding: 7.5px 15px;
+    border-radius: 2px;
+    background-color: #78e08f;
+    color: #ffffff;
+    border: none;
+    margin-left: 10px;
+}
+
+h4 {
+    display: block;
+    font-size: 25px;
+    margin-block-start: 5px;
+    margin-block-end: 10px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: normal;
+}
+
+h5 {
+    display: block;
+    font-size: 20px;
+    margin-block-start: 1.67em;
+    margin-block-end: 5px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: normal;
+}
+
+.taskDB{
+    background-color: #48dbfb;
+    padding: 7px;
+    font-size: 20px;
+    width: 1200px;
+}
+
+#task_name{
+    font-size: 20px;
+    width: 1000px;
+    background-color: #dcdde1;
+    margin-bottom: 5px;
+    padding: 15px;
+}
+
+#delete{
+    display: inline;
+    position: absolute;
+    left: 800px;
+    
+}
+
+.remove{
+    vertical-align: middle;
+    background-color: red;
+    color: white;
+    padding: 10px;
+    border-color: white;
+}
