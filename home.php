@@ -1,4 +1,6 @@
-<?php session_start(); ?>
+<?php 
+ob_start();
+session_start(); ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -11,6 +13,7 @@
         <h4> Task </h4>
         <form action="" method="post">
         <?php
+            
             include 'libs/config.php'; 
             if(isset($_POST['new_task']))
             {
@@ -35,8 +38,8 @@
         <h5> Current Tasks </h5>
         <h4 class = "taskDB"> Task </h4>
        <?php 
-       if (isset($_SESSION['username']))
-       {
+      if (isset($_SESSION['username']))
+      {
 
             $sql = "SELECT id,task_name FROM tasks";
             $query = mysqli_query($conn, $sql);
@@ -45,20 +48,22 @@
                 $id = $row["id"];
             ?>
             <div id = "task_name">
-            <?php echo $task_name ?>
+            <?php ob_start(); echo $task_name ?>
             <form id = "delete" action="" method="POST" onsubmit="return confirm('Are you sure?');">
 				<button class="remove" type="submit" name="delete" value=<?php echo $row['id']?> >Delete</button>
 			</form>
             </div>
             <?php 
             }
+            ob_end_flush();
             ?>
             <?php
-       }
-
-       else{
-           die(header("location: login.php"));   
-       }
+      }
+   
+      else{
+          die(header("location: login.php"));   
+      }
+      ob_end_flush();
        ?>
     <footer>
         <p>Click here to logout: 

@@ -1,3 +1,4 @@
+<?php ob_start(); ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -17,6 +18,7 @@
 
                 <?php
                     // define("IN_SITE", true);
+                    
                     include 'libs/config.php'; 
                     if(isset($_POST['submit']) && validate($_POST['username']) && validate($_POST['password'])) {
                         $username = $_POST['username'];
@@ -27,12 +29,15 @@
                         $row = mysqli_fetch_assoc($query);
 
                         if(mysqli_num_rows($query) > 0) {
+                            
                             session_start();
                             $_SESSION['username'] = $row['username'];
                             header("location:home.php");
                            
+                           
                         } else echo "Please check your username or password!";
-                    }  
+                    } 
+                ob_end_flush();
                 ?>
 
                     <div class="input-box">

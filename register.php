@@ -1,3 +1,4 @@
+<?php ob_start(); ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -62,6 +63,7 @@
             <br><p style="position: relative;left:120px;"><?php echo "Password isn't match! Please try again"; ?></p>
         <?php
     }
+    ob_end_flush();
 ?>
 
                     <div class="input-box">
